@@ -17,7 +17,7 @@ Simulate the movement of three chess pieces (Pawn, King, Queen) on an 8x8 chessb
    ```bash
    npm install
    ```
-3. Run the following command to exicute the code:
+3. Run the following command to execute the code:
    ```bash
    npx ts-node src/index.ts [piece] [position]
    ```
