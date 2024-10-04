@@ -1,14 +1,14 @@
 import { Pawn, King, Queen } from "./pieces";
 
 // Get input from command line arguments
-const pieceType = process.argv[2]?.toLowerCase(); // Convert piece type to lowercase
+const pieceType = process.argv[2]; // Convert piece type to lowercase
 const position = process.argv[3]?.toUpperCase(); // Convert position to uppercase
 
 try {
   let moves: string[];
 
   // Determine which piece to create based on input
-  switch (pieceType) {
+  switch (pieceType?.toLowerCase()) {
     case "pawn":
       moves = new Pawn(position).getMoves();
       break;

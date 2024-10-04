@@ -1,19 +1,23 @@
 import { ChessPiece } from "./piece";
 import { isValidPosition, Position, posToString } from "../utils";
 
+// Class representing the Queen piece
 export class Queen extends ChessPiece {
+  // Method to get possible moves for the Queen
   getMoves(): string[] {
     const moves: string[] = [];
+
+    // Queen can move in all directions until hitting the board edge
     for (let i = 1; i < 8; i++) {
       const directions: Position[] = [
-        { row: i, col: 0 },
-        { row: -i, col: 0 },
-        { row: 0, col: i },
-        { row: 0, col: -i },
-        { row: i, col: i },
-        { row: i, col: -i },
-        { row: -i, col: i },
-        { row: -i, col: -i },
+        { row: i, col: 0 }, // Down
+        { row: -i, col: 0 }, // Up
+        { row: 0, col: i }, // Right
+        { row: 0, col: -i }, // Left
+        { row: i, col: i }, // Down-Right
+        { row: i, col: -i }, // Down-Left
+        { row: -i, col: i }, // Up-Right
+        { row: -i, col: -i }, // Up-Left
       ];
 
       directions.forEach((d) => {
@@ -24,6 +28,7 @@ export class Queen extends ChessPiece {
         if (isValidPosition(move)) moves.push(posToString(move));
       });
     }
-    return moves;
+
+    return moves; // Return all valid moves
   }
 }
